@@ -5,7 +5,7 @@
 [![Vapor](https://img.shields.io/badge/Vapor-4.0-e040fb.svg)](https://docs.vapor.codes/4.0/)
 [![Twitter: @diamantidis_io](https://img.shields.io/badge/Twitter-@diamantidis_io-blue.svg?logo=twitter&color=1da1f2&style=flat)](https://twitter.com/diamantidis_io)
 
-A simple [GraphQL] server in Swift using [Vapor 4.0].
+A simple [GraphQL] server in Swift using [Vapor 4.0]. This server was built as a demonstration demo for the post ["Swift ❤️ GraphQL: How to create a GraphQL server with Vapor and an iOS app as a client"] that I published on my [personal blog]. You can always refer to the post if you want to find more information about this project.
 
 ## Requirements
 * Xcode 11.4 or greater
@@ -50,6 +50,8 @@ I'm [Ioannis Diamantidis] and you can find me on:
 This project is licensed under the terms of the MIT license. See the [LICENSE] file.
 
 [GraphQL]: https://graphql.org/
+["Swift ❤️ GraphQL: How to create a GraphQL server with Vapor and an iOS app as a client"]: https://diamantidis.github.io/2020/05/24/swift-loves-graphql-server-with-vapor-and-ios-app-client
+[personal blog]: https://diamantidis.github.io
 [Vapor 4.0]: https://docs.vapor.codes/4.0/
 [Ioannis Diamantidis]: https://diamantidis.github.io
 [Twitter]: https://twitter.com/diamantidis_io
