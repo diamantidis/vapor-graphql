@@ -2,11 +2,11 @@ import Vapor
 import GraphQLKit
 
 final class PostController {
-    func fetchPosts(request: Request, _: NoArguments) throws -> [Post] {
+    func fetchPosts(request: Request, _: NoArguments) -> [Post] {
         return posts
     }
 
-    private var posts = [
-        Post(id: 1, title: "My first post")
+    private lazy var posts = [
+        Post(id: CustomUUID(value: UUID()), title: "My first post")
     ]
 }
