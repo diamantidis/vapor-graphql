@@ -5,4 +5,5 @@ struct Post: Codable {
     let title: String
     let publishedAt: Date
     let tags: [Tag]
+    let author: Author
 }

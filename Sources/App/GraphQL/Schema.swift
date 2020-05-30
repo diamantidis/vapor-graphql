@@ -19,11 +19,18 @@ enum Schemas {
         Scalar(Date.self)
             .description("Date Type"),
 
+        Type(Author.self, fields: [
+            Field(.id, at: \.id),
+            Field(.name, at: \.name),
+            Field(.twitter, at: \.twitter)
+        ]),
+
         Type(Post.self, fields: [
             Field(.id, at: \.id),
             Field(.title, at: \.title),
             Field(.publishedAt, at: \.publishedAt),
             Field(.tags, at: \.tags),
+            Field(.author, at: \.author),
         ]),
 
         Query([
