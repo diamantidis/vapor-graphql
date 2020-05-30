@@ -7,6 +7,11 @@ final class PostController {
     }
 
     private lazy var posts = [
-        Post(id: CustomUUID(value: UUID()), title: "My first post", publishedAt: Date())
+        Post(
+            id: CustomUUID(value: UUID()),
+            title: "My first post",
+            publishedAt: Date(),
+            tags: [.swift, .graphql, .vapor]
+        )
     ]
 }

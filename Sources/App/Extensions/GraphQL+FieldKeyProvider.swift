@@ -7,6 +7,7 @@ extension Post: FieldKeyProvider {
         case id
         case title
         case publishedAt
+        case tags
     }
 }
 
