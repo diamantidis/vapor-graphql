@@ -7,6 +7,6 @@ final class PostController {
     }
 
     private lazy var posts = [
-        Post(id: CustomUUID(value: UUID()), title: "My first post")
+        Post(id: CustomUUID(value: UUID()), title: "My first post", publishedAt: Date())
     ]
 }

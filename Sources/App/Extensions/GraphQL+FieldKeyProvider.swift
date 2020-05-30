@@ -6,6 +6,7 @@ extension Post: FieldKeyProvider {
     enum FieldKeys: String {
         case id
         case title
+        case publishedAt
     }
 }
 
