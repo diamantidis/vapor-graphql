@@ -6,6 +6,9 @@ extension Post: FieldKeyProvider {
     enum FieldKeys: String {
         case id
         case title
+        case publishedAt
+        case tags
+        case author
     }
 }
 
@@ -14,5 +17,15 @@ extension PostController: FieldKeyProvider {
 
     enum FieldKeys: String {
         case posts
+    }
+}
+
+extension Author: FieldKeyProvider {
+    typealias FieldKey = FieldKeys
+
+    enum FieldKeys: String {
+        case id
+        case name
+        case twitter
     }
 }
