@@ -22,3 +22,18 @@ final class PostController {
         )
     ]
 }
+
+extension PostController {
+    struct DeletePostArguments: Codable {
+        let id: CustomUUID
+    }
+
+    func deletePost(request: Request, arguments: DeletePostArguments) -> Bool {
+        let postIndex = posts.firstIndex{ $0.id == arguments.id }
+        guard let index = postIndex?.indexValue else {
+            return false
+        }
+        posts.remove(at: index)
+        return true
+    }
+}

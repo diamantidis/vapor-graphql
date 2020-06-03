@@ -16,7 +16,10 @@ extension PostController: FieldKeyProvider {
     typealias FieldKey = FieldKeys
 
     enum FieldKeys: String {
+        case id
+
         case posts
+        case deletePost
     }
 }
 

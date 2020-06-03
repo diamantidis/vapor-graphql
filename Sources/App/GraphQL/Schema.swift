@@ -36,5 +36,10 @@ enum Schemas {
         Query([
             Field(.posts, at: PostController.fetchPosts),
         ]),
+
+        Mutation([
+            Field(PostController.FieldKeys.deletePost, at: PostController.deletePost)
+                .argument(PostController.FieldKeys.id, at: \.id),
+        ])
     ])
 }
