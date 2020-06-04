@@ -37,3 +37,22 @@ extension PostController {
         return true
     }
 }
+
+extension PostController {
+    struct EditPostArguments: Codable {
+        let id: CustomUUID
+        let title: String
+        let tags: [Tag]
+    }
+
+    func editPost(request: Request, arguments: EditPostArguments) -> Post? {
+        let postIndex = posts.firstIndex{ $0.id == arguments.id }
+        guard let index = postIndex?.indexValue else {
+            return nil
+        }
+
+        posts[index].title = arguments.title
+        posts[index].tags = arguments.tags
+        return posts[index]
+    }
+}

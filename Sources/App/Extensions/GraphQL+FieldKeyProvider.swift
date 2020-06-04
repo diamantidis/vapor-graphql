@@ -17,9 +17,12 @@ extension PostController: FieldKeyProvider {
 
     enum FieldKeys: String {
         case id
+        case title
+        case tags
 
         case posts
         case deletePost
+        case editPost
     }
 }
 

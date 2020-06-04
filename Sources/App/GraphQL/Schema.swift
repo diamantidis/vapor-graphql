@@ -38,8 +38,13 @@ enum Schemas {
         ]),
 
         Mutation([
-            Field(PostController.FieldKeys.deletePost, at: PostController.deletePost)
-                .argument(PostController.FieldKeys.id, at: \.id),
+            Field(.deletePost, at: PostController.deletePost)
+                .argument(.id, at: \.id),
+
+            Field(.editPost, at: PostController.editPost)
+                .argument(.id, at: \.id)
+                .argument(.title, at: \.title)
+                .argument(.tags, at: \.tags)
         ])
     ])
 }
