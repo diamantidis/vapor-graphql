@@ -56,3 +56,23 @@ extension PostController {
         return posts[index]
     }
 }
+
+extension PostController {
+    struct CreatePostArguments: Codable {
+        let input: PostInput
+    }
+    func createPost(request: Request, arguments: CreatePostArguments) -> Post? {
+        guard author.id == arguments.input.authorId else {
+            return nil
+        }
+        let post = Post(
+            id: CustomUUID(value: UUID()),
+            title: arguments.input.title,
+            publishedAt: Date(),
+            tags: arguments.input.tags,
+            author: author
+        )
+        posts.append(post)
+        return post
+    }
+}

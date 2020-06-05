@@ -19,10 +19,12 @@ extension PostController: FieldKeyProvider {
         case id
         case title
         case tags
+        case input
 
         case posts
         case deletePost
         case editPost
+        case createPost
     }
 }
 
@@ -33,5 +35,15 @@ extension Author: FieldKeyProvider {
         case id
         case name
         case twitter
+    }
+}
+
+extension PostInput: FieldKeyProvider {
+    typealias FieldKey = FieldKeys
+
+    enum FieldKeys : String {
+        case title
+        case tags
+        case authorId
     }
 }
