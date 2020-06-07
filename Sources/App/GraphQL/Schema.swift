@@ -36,5 +36,24 @@ enum Schemas {
         Query([
             Field(.posts, at: PostController.fetchPosts),
         ]),
+
+        Input(PostInput.self, [
+            InputField(.title, at: \.title),
+            InputField(.tags, at: \.tags),
+            InputField(.authorId, at: \.authorId)
+        ]),
+
+        Mutation([
+            Field(.deletePost, at: PostController.deletePost)
+                .argument(.id, at: \.id),
+
+            Field(.editPost, at: PostController.editPost)
+                .argument(.id, at: \.id)
+                .argument(.title, at: \.title)
+                .argument(.tags, at: \.tags),
+
+            Field(.createPost, at: PostController.createPost)
+                .argument(.input, at: \.input)
+        ])
     ])
 }

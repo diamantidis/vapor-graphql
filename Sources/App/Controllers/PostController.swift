@@ -22,3 +22,57 @@ final class PostController {
         )
     ]
 }
+
+extension PostController {
+    struct DeletePostArguments: Codable {
+        let id: CustomUUID
+    }
+
+    func deletePost(request: Request, arguments: DeletePostArguments) -> Bool {
+        let postIndex = posts.firstIndex{ $0.id == arguments.id }
+        guard let index = postIndex?.indexValue else {
+            return false
+        }
+        posts.remove(at: index)
+        return true
+    }
+}
+
+extension PostController {
+    struct EditPostArguments: Codable {
+        let id: CustomUUID
+        let title: String
+        let tags: [Tag]
+    }
+
+    func editPost(request: Request, arguments: EditPostArguments) -> Post? {
+        let postIndex = posts.firstIndex{ $0.id == arguments.id }
+        guard let index = postIndex?.indexValue else {
+            return nil
+        }
+
+        posts[index].title = arguments.title
+        posts[index].tags = arguments.tags
+        return posts[index]
+    }
+}
+
+extension PostController {
+    struct CreatePostArguments: Codable {
+        let input: PostInput
+    }
+    func createPost(request: Request, arguments: CreatePostArguments) -> Post? {
+        guard author.id == arguments.input.authorId else {
+            return nil
+        }
+        let post = Post(
+            id: CustomUUID(value: UUID()),
+            title: arguments.input.title,
+            publishedAt: Date(),
+            tags: arguments.input.tags,
+            author: author
+        )
+        posts.append(post)
+        return post
+    }
+}
