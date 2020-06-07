@@ -1,5 +1,5 @@
 import Foundation
 
-struct CustomUUID: Codable {
+struct CustomUUID: Codable, Equatable {
     let value: UUID
 }
