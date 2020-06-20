@@ -44,6 +44,6 @@ extension PostInput: FieldKeyProvider {
     enum FieldKeys : String {
         case title
         case tags
-        case authorId
+        case publishedAt
     }
 }

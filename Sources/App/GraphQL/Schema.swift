@@ -40,7 +40,7 @@ enum Schemas {
         Input(PostInput.self, [
             InputField(.title, at: \.title),
             InputField(.tags, at: \.tags),
-            InputField(.authorId, at: \.authorId)
+            InputField(.publishedAt, at: \.publishedAt)
         ]),
 
         Mutation([
